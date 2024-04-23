@@ -40,10 +40,10 @@ st.divider()
 option = st.selectbox('Select a model:', ('small', 'medium', 'melody', 'large'))
 prompt = st.text_input(label='Prompt:', value='90s rock song with loud guitars and heavy drums')
 if st.button("Generate"):
-    purge()
+    # purge()
     model = loadmodel(option)
     model_ready = setparams(model, use_sampling=True, top_k=250, top_p=0.0, temperature=1.0, cfg_coef=3.0, duration=10)
-    purge()
+    # purge()
     with st.spinner("Generating..."):
         output = generate(model_ready, prompt)
     with st.spinner("Detaching..."):
@@ -61,5 +61,5 @@ if st.button("Generate"):
         with open(filename, "rb") as f:
             generation = f.read()
         st.audio(generation)
-purge()
+# purge()
 
