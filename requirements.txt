@@ -2,3 +2,4 @@ audiocraft
 streamlit
 torch
 torchaudio
+torchvision
